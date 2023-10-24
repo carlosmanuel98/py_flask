@@ -6,7 +6,7 @@ from decouple import config#paquete para variable de entorno
 
 def leer_csv():
     try:
-        print('paso por bff y llego al back-')
+        print('paso por bff y llego al back')
         name_file = 'datos.csv'
         archivo_csv = config('PATH_STATIC') + f'/csv/{name_file}'
 
