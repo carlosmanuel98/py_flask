@@ -6,9 +6,9 @@ from decouple import config#paquete para variable de entorno
 
 def leer_csv():
     try:
+        print('paso por bff y llego al back')
         name_file = 'datos.csv'
         archivo_csv = config('PATH_STATIC') + f'/csv/{name_file}'
-        # print(archivo_csv)
 
         # Nombre del archivo CSV
         # Inicializa una lista para almacenar los datos del CSV
@@ -32,7 +32,7 @@ def leer_csv():
         return datos
         #return jsonify(datos)
     except Exception as e:
-        #return f"Se produjo una excepción no manejada: {e}"
+        # return f"Se produjo una excepción no manejada: {e}"
         return {'error': str(e)}
 
 #Retorna ruta actual

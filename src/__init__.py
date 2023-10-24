@@ -1,8 +1,15 @@
 from flask import Flask
-from .importacion.routes import web_bp, mobile_bp
-from .importacion.database.connection import db, SQLALCHEMY_DATABASE_URI, SQLALCHEMY_TRACK_MODIFICATIONS
+from src.bff.routes import web_bp, mobile_bp
+from src.importacion.database.connection import db, SQLALCHEMY_DATABASE_URI, SQLALCHEMY_TRACK_MODIFICATIONS
+from config import get_config
+from flask_cors import CORS
 app = Flask(__name__)
 
+# cors = CORS(app, resources={r"/web/*": {"origins": "*"}})
+CORS(app)
+
+config = get_config()
+app.config.from_object(config)
 
 #CONEXION BASE DE DATO
 app.config['SQLALCHEMY_DATABASE_URI'] = SQLALCHEMY_DATABASE_URI

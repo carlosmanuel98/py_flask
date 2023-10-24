@@ -7,4 +7,4 @@ from src import app
     #db.create_all()
 
 if __name__ == '__main__':
-    app.run(debug=True)#Para recargar cuando se haga cambios.
+    app.run(host="0.0.0.0", port="5000")#Para recargar cuando se haga cambios.
